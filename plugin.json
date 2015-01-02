@@ -1,0 +1,20 @@
+{
+	"id": "nodebb-plugin-exodo-editor",
+	"name": "NodeBB: Exodo Editor",
+	"description": "Next level editor",
+	"url": "https://github.com/ExoDo-NodeBB/Editor",
+	"library": "./library.js",
+	"hooks": [
+		{ 
+			"hook": "filter:post.parse", 
+			"method": "parse", 
+			"callbacked": true,
+		}
+	],
+    "scripts": [
+		"./public/js/buttons.js",
+	],
+    "less": [
+        "./public/less/buttons.less",
+    ]
+}
