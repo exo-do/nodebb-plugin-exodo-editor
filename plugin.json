@@ -5,16 +5,14 @@
 	"url": "https://github.com/ExoDo-NodeBB/Editor",
 	"library": "./library.js",
 	"hooks": [
-		{ 
-			"hook": "filter:post.parse", 
-			"method": "parse", 
-			"callbacked": true,
-		}
+		{ "hook": "filter:parse.post", "method": "parse" },
+		{ "hook": "filter:parse.signature", "method": "parse" },
+		{ "hook": "filter:parse.raw", "method": "parse" }
 	],
     "scripts": [
-		"./public/js/buttons.js",
+		"./public/js/buttons.js"
 	],
     "less": [
-        "./public/less/buttons.less",
+        "./public/less/buttons.less"
     ]
 }
