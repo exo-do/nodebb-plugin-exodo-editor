@@ -19,7 +19,7 @@ plugin.parse = function (data, callback) {
 };
 
 function parser(data) {
-	console.log(data)
+
 	//create a variable to capture code content
 	var codesTag = [];
 	//replace all codes tags by a var we can use in a regex later
@@ -42,8 +42,6 @@ function parser(data) {
 		//Underlined text.
 		.replace(/~([\s\S]*?)~/g, "<u>$1</u>");
 	
-	console.log(data)
-
 	//replace CODE with previously stocked code content
 	data = data.replace(/__CODE__/g, function () {
 		return codesTag.shift();
