@@ -28,17 +28,18 @@ function parser(data) {
 		return '__CODE__';
 	});
 	//do the replace on the whole
+    
 	data = data
 		//Handle line breaks inside a paragraph.
 		.replace(/([^>]+)\n/g, "$1<br>")
 		//Text align left
-		.replace(/[^`]?(<(?:p|h\d)>)&lt;-([\s\S]*?)&lt;-(<\/(?:p|h\d)>)/gm, '$1<p class="text-left">$2</p>$3')
+		.replace(/[^`]?(<(p|h\d)>)&lt;-((?:(?!-&gt;)[\s\S])*?)&lt;-(<\/\2>)/gm, '<div class="text-left">$1$3$4</div>') //$1 = <p>, $2 = p (discarded), $3 = content, $4 = </p>
 		//Text align right
-		.replace(/[^`]?(<(?:p|h\d)>)-&gt;([\s\S]*?)-&gt;(<\/(?:p|h\d)>)/gm, '$1<p class="text-right">$2</p>$3')
+		.replace(/[^`]?(<(p|h\d)>)-&gt;((?:(?!&lt;-)[\s\S])*?)-&gt;(<\/\2>)/gm, '<div class="text-right">$1$3$4</div>')
 		//Text align center
-		.replace(/[^`\n]?(<(?:p|h\d)>)-&gt;([\s\S]*?)&lt;-(<\/(?:p|h\d)>)/gm, '$1<p class="text-center">$2</p>$3')
+		.replace(/[^`\n]?(<(p|h\d)>)-&gt;((?:(?!-&gt;)[\s\S])*?)&lt;-(<\/\2>)/gm, '<div class="text-center">$1$3$4</div>')
 		//Text align justify
-		.replace(/[^`]?(<(?:p|h\d)>)=&gt;([\s\S]*?)&lt;=(<\/(?:p|h\d)>)/gm, '$1<p class="text-justify">$2</p>$3')
+		.replace(/[^`]?(<(p|h\d)>)=&gt;([\s\S]*?)&lt;=(<\/\2>)/gm, '<div class="text-justify">$1$3$4</div>')
 		//Underlined text.
 		.replace(/~([\s\S]*?)~/g, "<u>$1</u>");
 	
