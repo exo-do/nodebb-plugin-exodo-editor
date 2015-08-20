@@ -21,16 +21,16 @@ $('document').ready(function () {
 		composer.addButton('fa fa-quote-right', function (textarea, selectionStart, selectionEnd) {
 			writeToTextarea(controls, textarea, selectionStart, selectionEnd, '@Usuario:\n> ', '\n\n');
 		});
-		composer.addButton('fa fa-align-left', function (textarea, selectionStart, selectionEnd) {
+		composer.addButton('fa fa-align-left hidden-xs', function (textarea, selectionStart, selectionEnd) {
 			writeToTextarea(controls, textarea, selectionStart, selectionEnd, '<-', '<-');
 		});
-		composer.addButton('fa fa-align-center', function (textarea, selectionStart, selectionEnd) {
+		composer.addButton('fa fa-align-center hidden-xs', function (textarea, selectionStart, selectionEnd) {
 			writeToTextarea(controls, textarea, selectionStart, selectionEnd, '->', '<-');
 		});
-		composer.addButton('fa fa-align-right', function (textarea, selectionStart, selectionEnd) {
+		composer.addButton('fa fa-align-right hidden-xs', function (textarea, selectionStart, selectionEnd) {
 			writeToTextarea(controls, textarea, selectionStart, selectionEnd, '->', '->');
 		});
-		composer.addButton('fa fa-align-justify', function (textarea, selectionStart, selectionEnd) {
+		composer.addButton('fa fa-align-justify hidden-xs', function (textarea, selectionStart, selectionEnd) {
 			writeToTextarea(controls, textarea, selectionStart, selectionEnd, '=>', '<=');
 		});
 
