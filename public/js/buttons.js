@@ -21,18 +21,22 @@ $('document').ready(function () {
 		composer.addButton('fa fa-quote-right', function (textarea, selectionStart, selectionEnd) {
 			writeToTextarea(controls, textarea, selectionStart, selectionEnd, '@Usuario:\n> ', '\n\n');
 		});
-		composer.addButton('fa fa-align-left hidden-xs', function (textarea, selectionStart, selectionEnd) {
+		//dont show this on mobile
+		if ($('.userinfo').is(":visible")) 
+		{
+		composer.addButton('fa fa-align-left out', function (textarea, selectionStart, selectionEnd) {
 			writeToTextarea(controls, textarea, selectionStart, selectionEnd, '<-', '<-');
 		});
-		composer.addButton('fa fa-align-center hidden-xs', function (textarea, selectionStart, selectionEnd) {
+		composer.addButton('fa fa-align-center out', function (textarea, selectionStart, selectionEnd) {
 			writeToTextarea(controls, textarea, selectionStart, selectionEnd, '->', '<-');
 		});
-		composer.addButton('fa fa-align-right hidden-xs', function (textarea, selectionStart, selectionEnd) {
+		composer.addButton('fa fa-align-right out', function (textarea, selectionStart, selectionEnd) {
 			writeToTextarea(controls, textarea, selectionStart, selectionEnd, '->', '->');
 		});
-		composer.addButton('fa fa-align-justify hidden-xs', function (textarea, selectionStart, selectionEnd) {
+		composer.addButton('fa fa-align-justify out', function (textarea, selectionStart, selectionEnd) {
 			writeToTextarea(controls, textarea, selectionStart, selectionEnd, '=>', '<=');
 		});
+		}
 
 	});
 
@@ -56,7 +60,7 @@ $('document').ready(function () {
 		setTimeout(function () {
 			//Reordenamos un poco la toolbar
 			$toolbar.find('span:has(.fa-italic)').after($('span:has(.fa-strikethrough)')).after($('span:has(.fa-underline)'));
-			$toolbar.find('span:has(.fa-picture-o)').after($('span:has(.fa-link)')).after($('span:has(.fa-file-image-o)'));
+			$toolbar.find('span:has(.fa-cloud-upload)').after($('span:has(.fa-link)')).after($('span:has(.fa-file-image-o)'));
 			$toolbar.find('span:has(.fa-list)').after($('span:has(.fa-list-ol)'));
 			$toolbar.find('.help').appendTo($toolbar);
 		}, 0);
