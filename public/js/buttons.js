@@ -22,7 +22,7 @@ $('document').ready(function () {
 			writeToTextarea(controls, textarea, selectionStart, selectionEnd, '@Usuario:\n> ', '\n\n');
 		});
 		//dont show this on mobile
-		if ($('.userinfo').is(":visible") || $('.threadstats').is(":visible")) 
+		/*if ($('.userinfo').is(":visible") || $('.threadstats').is(":visible")) 
 		{
 		composer.addButton('fa fa-align-left out', function (textarea, selectionStart, selectionEnd) {
 			writeToTextarea(controls, textarea, selectionStart, selectionEnd, '<-', '<-');
@@ -37,7 +37,7 @@ $('document').ready(function () {
 			writeToTextarea(controls, textarea, selectionStart, selectionEnd, '=>', '<=');
 		});
 		}
-
+		*/
 	});
 
 	function writeToTextarea(controls, textarea, selectionStart, selectionEnd, tagStart, tagEnd, tagExample) {
